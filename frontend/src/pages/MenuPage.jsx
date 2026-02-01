@@ -140,7 +140,7 @@ const MenuManagement = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className="text-3xl font-bold">🍽️ Menu Management</h1>
+          <h1 className="text-3xl font-bold">🍽️ Restaurant Admin Dashboard</h1>
           <p className="text-slate-400">Admin control for menu items</p>
         </div>
 

@@ -183,8 +183,18 @@ Frontend: Netlify
 Backend: Render
 Database: MongoDB Atlas
 
+## Live Demo
+
+Frontend (Netlify):  
+https://eatoes-restaurant-admin.netlify.app/
+
+Backend API (Render):  
+https://restaurant-admin-dashboard-p2ic.onrender.com
+
+
 # Final Notes
 
 This project follows real-world admin dashboard practices
 Focused on clarity, performance, and maintainability
 Avoided over-engineering while meeting all assignment requirements
+
