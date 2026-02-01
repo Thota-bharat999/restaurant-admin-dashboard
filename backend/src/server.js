@@ -16,9 +16,13 @@ app.use(express.json());
 
 
 // routes
-// app.get("/", (req, res) => {
-//   res.send("Restaurant Admin API is running");
-// });
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Restaurant Admin API is running"
+  });
+});
+
 app.use("/api/menu",menuRoutes)
 app.use("/api/orders",orderRoutes)
 app.use("/api/reports", reportRoutes);
