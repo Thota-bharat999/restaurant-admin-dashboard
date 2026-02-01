@@ -7,6 +7,7 @@ import {
   updateMenuItem,
   deleteMenuItem,
   toggleAvailability,
+  searchMenuItems
 } from "../controllers/menuController.js";
 
 
@@ -16,13 +17,18 @@ import {
  * @route   POST /api/menu
  * @desc    Create new menu item
  */
-router.post("/", createMenuItem);
+router.post("/create", createMenuItem);
 
 /**
  * @route   GET /api/menu
  * @desc    Get all menu items with filters
  */
-router.get("/", getAllMenuItems);
+router.get("/all", getAllMenuItems);
+/**
+ * @route   GET /api/menu/search?q=query
+ * @desc    Search menu items by name or ingredients
+ */
+router.get("/search", searchMenuItems);
 
 /**
  * @route   GET /api/menu/:id
@@ -47,5 +53,6 @@ router.delete("/:id", deleteMenuItem);
  * @desc    Toggle availability
  */
 router.patch("/:id/availability", toggleAvailability);
+
 
 export default router;

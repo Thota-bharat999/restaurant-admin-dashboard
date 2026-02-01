@@ -141,3 +141,29 @@ export const toggleAvailability=async(req,res,next)=>{
         next(error)
     }
 }
+// Add the searchMenuItems functions
+export const searchMenuItems=async(req,res,next)=>{
+    try{
+        const{q}=req.query;
+        if(!q || q.trim()===""){
+            return res.status(400).json({
+                success:false,
+                message:"Search query is required"
+            })
+
+        }
+       const result = await MenuItem.find(
+      { $text: { $search: q } },
+      { score: { $meta: "textScore" } }   
+    ).sort({ score: { $meta: "textScore" } }); 
+
+            res.status(200).json({
+                success:true,
+                count:result.length,
+                data:result,
+            })
+
+    }catch(error){
+        next(error)
+    }
+}
